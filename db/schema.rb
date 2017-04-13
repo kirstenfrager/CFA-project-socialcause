@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413045237) do
+ActiveRecord::Schema.define(version: 20170413081432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 20170413045237) do
     t.index ["reset_password_token"], name: "index_influencers_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "photographs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "pictures"
+    t.integer  "influencer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["influencer_id"], name: "index_photographs_on_influencer_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -59,4 +73,5 @@ ActiveRecord::Schema.define(version: 20170413045237) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "photographs", "influencers"
 end
