@@ -20,12 +20,12 @@
 
   <div class="field">
     <%= f.label :mobile %><br />
-    <%= f.email_field :mobile, autofocus: true %>
+    <%= f.text_field :mobile, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :address %><br />
-    <%= f.email_field :address, autofocus: true %>
+    <%= f.text_field :address, autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

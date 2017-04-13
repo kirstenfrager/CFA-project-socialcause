@@ -4,8 +4,38 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instagram %><br />
+    <%= f.check_box :instagram %>
+  </div>
+
+  <div class="field">
+    <%= f.label :youtube %><br />
+    <%= f.check_box :youtube %>
+  </div>
+
+  <div class="field">
+    <%= f.label :social_media %><br />
+    <%= f.text_field :social_media %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
