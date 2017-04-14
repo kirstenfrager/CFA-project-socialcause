@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4">
+    <ul class="home-navbar-ul">
+      <li>
+  <!-- user login -->
+      <% if user_signed_in? %>
+
+          <%= link_to('Logout |', destroy_user_session_path, :method => :delete) %>
+
+
+        <%= link_to('My Account |', edit_user_registration_path) %>
+
+      <% else %>
+
+          <%= link_to('Users |', new_user_session_path)  %>
+
+      <% end %>
+<!-- influencer login -->
+      <% if influencer_signed_in? %>
+
+          <%= link_to('Logout |', destroy_influencer_session_path, :method => :delete) %>
+
+
+        <%= link_to('My Account', edit_influencer_registration_path) %>
+
+      <% else %>
+
+          <%= link_to('Influencers', new_influencer_session_path)  %>
+
+      <% end %>
+      </li>
+    </ul>
+
+  </div>
+</div>
