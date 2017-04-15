@@ -1,6 +1,8 @@
+<%= render "partials/navbar" %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Photographs</h1>
+<h1 class="text-center">Auctions</h1>
 
 <table>
   <thead>
@@ -14,6 +16,7 @@
   <tbody>
     <% @photographs.each do |photograph| %>
       <tr>
+        <td><%= image_tag photograph.image.url(:medium) %></td>
         <td><%= photograph.title %></td>
         <td><%= photograph.author %></td>
         <td><%= link_to 'Show', photograph %></td>

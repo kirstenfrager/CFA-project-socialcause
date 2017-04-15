@@ -14,8 +14,17 @@
  *= require_self
  */
 
- @import "bootstrap";
+ @import "materialize";
+ @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 .home-navbar-ul {
   list-style: none;
+  float: right;
+  margin-top: 1em;
+}
+
+.navbar-row {
+  margin-top: 5em;
+  font-family: 'Slabo 27px', serif;
+  font-size: 18px;
 }
