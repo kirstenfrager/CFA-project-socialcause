@@ -25,6 +25,18 @@
 
 .navbar-row {
   margin-top: 5em;
+  margin-bottom: 5em;
   font-family: 'Slabo 27px', serif;
   font-size: 18px;
+  a {
+    color: #747474;
+  }
+}
+
+.navbar-row a:hover {
+  color: black;
+}
+
+.picture-card {
+  margin-bottom: 4em;
 }
