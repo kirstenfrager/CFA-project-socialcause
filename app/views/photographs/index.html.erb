@@ -2,31 +2,23 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center">Auctions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photographs.each do |photograph| %>
-      <tr>
-        <td><%= image_tag photograph.image.url(:medium) %></td>
-        <td><%= photograph.title %></td>
-        <td><%= photograph.author %></td>
-        <td><%= link_to 'Show', photograph %></td>
-        <td><%= link_to 'Edit', edit_photograph_path(photograph) %></td>
-        <td><%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="row">
+  <% @photographs.each do |photograph| %>
+    <div class="col s5 m4 center-align picture-card">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag photograph.image.url(:medium) %>
+          <span class="card-title"><%= photograph.title %></span>
+        </div>
+        <div class="card-action">
+          <%= link_to photograph.author, photograph_path(photograph) %>
+          <!-- <a href="#">This is a link</a> -->
+          <%= link_to 'Edit', edit_photograph_path(photograph) %>
+          <%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'New Photograph', new_photograph_path %>
