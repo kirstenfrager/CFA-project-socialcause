@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'connect', to: 'connect#index'
+
+  post 'connect', to: 'connect#mail'
+
   devise_for :influencers
   devise_for :users
 

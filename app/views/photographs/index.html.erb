@@ -7,7 +7,7 @@
 <div class="row">
   <% @photographs.each do |photograph| %>
     <div class="col s5 m4 center-align picture-card">
-      <div class="card">
+      <div class="card hoverable">
         <div class="card-image">
           <%= image_tag photograph.image.url(:medium) %>
           <span class="card-title"><%= photograph.title %></span>
@@ -15,12 +15,15 @@
         <div class="card-action">
           <%= link_to photograph.author, photograph_path(photograph) %>
           <!-- <a href="#">This is a link</a> -->
-          <%= link_to 'Edit', edit_photograph_path(photograph) if current_user.admin? %>
-          <%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } if current_user.admin? %>
+          <%= link_to 'Edit', edit_photograph_path(photograph) if current_user || current_influencer %>
+          <%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } if current_user || current_influencer %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to 'New Photograph', new_photograph_path %>
+<%= link_to 'New Photograph', new_photograph_path if current_influencer %>
+
+
+<!-- if current_user.admin? -->
