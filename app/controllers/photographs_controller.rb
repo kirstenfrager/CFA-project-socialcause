@@ -41,6 +41,9 @@ class PhotographsController < ApplicationController
   # PATCH/PUT /photographs/1
   # PATCH/PUT /photographs/1.json
   def update
+    @photograph = Photograph.find(params[:id])
+    authorize @photograph
+    
     respond_to do |format|
       if @photograph.update(photograph_params)
         format.html { redirect_to @photograph, notice: 'Photograph was successfully updated.' }

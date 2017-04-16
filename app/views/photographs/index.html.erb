@@ -1,5 +1,7 @@
 <%= render "partials/navbar" %>
 
+<p><%= flash[:warning] %></p>
+
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -13,8 +15,8 @@
         <div class="card-action">
           <%= link_to photograph.author, photograph_path(photograph) %>
           <!-- <a href="#">This is a link</a> -->
-          <%= link_to 'Edit', edit_photograph_path(photograph) %>
-          <%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Edit', edit_photograph_path(photograph) if current_user.admin? %>
+          <%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } if current_user.admin? %>
         </div>
       </div>
     </div>
