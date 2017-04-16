@@ -5,8 +5,4 @@ class Influencer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :photographs
-
-  def admin?
-    has_role?(:admin)
-  end
 end

@@ -1,0 +1,73 @@
+<%= render "partials/navbar" %>
+
+<div class="contact-flash center-align raleway italic">
+  <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% elsif flash[:warning] %>
+      <div class="alert alert-danger"><%= flash[:warning] %></div>
+    <% else %>
+  <% end %>
+</div>
+
+<h2 class="contact-title raleway">GET IN TOUCH.</h2>
+
+<div class="divider">
+</div>
+
+<div class="row contact-content">
+  <div class="col m3">
+    <div class="contact-box">
+      <p><strong>KIRSTEN FRAGER</strong></p>
+      <p class="italic position">CEO</p>
+      <p class="contact-size">+6 0123 456 789</p>
+      <p class="position contact-size">kirsten.frager@influencethis.com</p>
+    </div>
+    <div class="contact-box">
+      <p><strong>ALJOSA MUSIKIC</strong></p>
+      <p class="italic position">Business Manager</p>
+      <p class="contact-size">+6 0123 456 789</p>
+      <p class="position contact-size">aljosa.musikic@influencethis.com</p>
+    </div>
+  </div>
+
+  <div class="col m3">
+    <div class="contact-box">
+      <p><strong>ELISE YOUNG</strong></p>
+      <p class="italic position">Marketing Manager</p>
+      <p class="contact-size">+6 0123 456 789</p>
+      <p class="position contact-size">elise.young@influencethis.com</p>
+    </div>
+    <div class="contact-box">
+      <p><strong>HANNAH THOMPSON</strong></p>
+      <p class="italic position">Charity Organiser</p>
+      <p class="contact-size">+6 0123 456 789</p>
+      <p class="position contact-size">hannah.thompson@influencethis.com</p>
+    </div>
+  </div>
+
+  <div class="col m5 right">
+    <%= simple_form_for :connect do |f| %>
+      <div class="input-field col m6">
+        <label for="first_name">First Name</label>
+        <%= f.input_field :first_name %>
+      </div>
+      <div class="input-field col m6">
+        <label for="last_name">Last Name</label>
+        <%= f.input_field :last_name %>
+      </div>
+      <div class="input-field col m12">
+        <label for="email">Email</label>
+        <%= f.input_field :email %>
+      </div>
+      <div class="input-field col m12">
+        <label for="message">Message</label>
+        <%= f.input_field :message %>
+      </div>
+      <div class="right contact-button">
+        <%= f.button :submit, "Send" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="divider">
+</div>

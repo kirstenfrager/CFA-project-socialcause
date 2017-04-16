@@ -16,6 +16,13 @@
 
  @import "materialize";
  @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+ @import url('https://fonts.googleapis.com/css?family=Raleway:200,200i,500,800');
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+}
 
 .home-navbar-ul {
   list-style: none;
