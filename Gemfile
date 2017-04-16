@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'rolify'
 gem 'pundit'
 gem 'instagram'
 gem "paperclip", "~> 5.0.0"
