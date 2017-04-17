@@ -24,6 +24,14 @@
   text-transform: uppercase;
 }
 
+.raleway-normal {
+  font-family: 'Raleway', sans-serif;
+}
+
+.text-indent {
+  text-indent: 20px;
+}
+
 .home-navbar-ul {
   list-style: none;
   float: right;
@@ -42,12 +50,4 @@
 
 .navbar-row a:hover {
   color: black;
-}
-
-.picture-card {
-  margin-bottom: 4em;
-}
-
-.image-cd {
-  height: 280px;
 }

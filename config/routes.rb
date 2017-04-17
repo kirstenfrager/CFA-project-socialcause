@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   get 'influencers_profile/show'
 
+  get 'pages/about'
+
+  get 'pages/charity'
+
   root 'pages#home'
   get '/callback' => 'pages#callback'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

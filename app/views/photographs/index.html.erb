@@ -8,7 +8,7 @@
   <% @photographs.each do |photograph| %>
     <div class="col s5 m4 center-align picture-card">
       <div class="card hoverable">
-        <div class="card-image">
+        <div class="card-image photo-size">
           <%= image_tag photograph.image.url(:medium) %>
           <span class="card-title"><%= photograph.title %></span>
         </div>
