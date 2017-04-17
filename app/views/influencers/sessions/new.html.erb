@@ -1,28 +1,39 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row devise-top-margin">
+  <div class="col m4 devise-box-overflow offset-m4 z-depth-4 rounded-edges">
+    <h4 class="raleway center-align line-height button-space-top">Influencer</h4>
+    <h2 class="raleway center-align button-space">Log in.</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="container">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="field center-align">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+    <div class="center-align button-smaller-top">
+      <img src="https://maxcdn.icons8.com/windows10/PNG/512/Logos/instagram_new-512.png" height="42" width="42"> <br>
+        <div class="grey-link">
+          <a>
+            <%= link_to 'Login with Instagram', Instagram.authorize_url(redirect_uri: ENV['REDIRECT_URI']) %> <br>
+          </a>
+        </div>
+      <a class="waves-effect waves-light btn button-width button-space-top"><%= f.submit "Log in" %></a>
+    </div>
+    <div class="center-align button-space-top">
+      <%= render "influencers/shared/links" %>
+    </div>
+    <div class="center-align button-space">
+      <%= link_to "Back", root_path %>
+    </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= link_to 'Login with Instagram', Instagram.authorize_url(redirect_uri: ENV['REDIRECT_URI']) %> <br>
-
-<%= render "influencers/shared/links" %>
+</div>

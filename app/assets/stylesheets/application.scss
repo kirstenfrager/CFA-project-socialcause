@@ -28,6 +28,10 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.small-writing {
+  font-size: 12px;
+}
+
 .text-indent {
   text-indent: 20px;
 }
@@ -48,6 +52,32 @@
   }
 }
 
-.navbar-row a:hover {
+.navbar-row, .grey-link a:hover {
   color: black;
+}
+
+.line-height {
+  line-height: 10%;
+}
+
+.grey-link a {
+  color: #747474;
+}
+
+// devise styling
+.devise-box-overflow {
+  overflow: auto;
+  background-color: #F5F5F5;
+}
+
+.rounded-edges {
+  border-radius: 20px;
+}
+
+.devise-top-margin {
+  margin-top: 8%;
+}
+
+.button-smaller-top {
+  margin-top: 1em;
 }

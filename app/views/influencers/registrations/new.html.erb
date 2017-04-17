@@ -1,59 +1,63 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
+<div class="row devise-top-margin">
+  <div class="col m6 devise-box-overflow offset-m3 z-depth-4 rounded-edges">
+    <h4 class="raleway center-align line-height button-space-top">Influencer</h4>
+    <h2 class="raleway center-align button-space">Sign Up.</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="container">
+        <div class="center-align">
+          <%= devise_error_messages! %>
+        </div>
+        <div class="field">
+          <%= f.label :first_name %><br/>
+          <%= f.text_field :first_name, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :last_name %><br/>
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br/>
+          <%= f.email_field :email %>
+        </div>
+        <div class="field">
+          <%= f.label :mobile %><br/>
+          <%= f.text_field :mobile %>
+        </div>
+        <div class="field">
+          <%= f.check_box :instagram %>
+          <%= f.label :instagram %>
+        </div>
+        <div class="field">
+          <%= f.check_box :youtube %>
+          <%= f.label :youtube %>
+        </div>
+        <div class="button-smaller-top">
+          <div class="field">
+            <%= f.label :social_media %>
+            <%= f.text_field :social_media %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br/>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="center-align">
+          <a class="waves-effect waves-light btn button-space button-width button-space-top"><%= f.submit "Sign up" %></a>
+        </div>
+        <div class="center-align">
+          <%= render "influencers/shared/links" %>
+        </div>
+        <div class="center-align button-space">
+          <%= link_to "Back", root_path %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :mobile %><br />
-    <%= f.text_field :mobile %>
-  </div>
-
-  <div class="field">
-    <%= f.label :instagram %><br />
-    <%= f.check_box :instagram %>
-  </div>
-
-  <div class="field">
-    <%= f.label :youtube %><br />
-    <%= f.check_box :youtube %>
-  </div>
-
-  <div class="field">
-    <%= f.label :social_media %><br />
-    <%= f.text_field :social_media %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "influencers/shared/links" %>
+</div>
