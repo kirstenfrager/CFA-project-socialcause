@@ -1,3 +1,36 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// about page:
+.border-right {
+  border-right: 1px solid #E0E0E0;
+  margin-top: 2em;
+}
+
+.button-space {
+  margin-bottom: 1em;
+}
+
+.button-space-top {
+  margin-top: 2em;
+}
+
+.button-width {
+  width: 170px !important;
+}
+
+// charity page:
+.charity-img-size {
+  height: 200px;
+  margin-top: 3em;
+}
+
+.charity-text-size {
+  margin-top: 3em;
+}
+
+.charity-img-size-bigger {
+  height: 300px;
+  margin-top: 3em;
+}
