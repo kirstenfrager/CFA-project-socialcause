@@ -16,3 +16,7 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize-form
+
+// toast
+  var $toastContent = $('<span>Email Sent!</span>');
+    Materialize.toast($toastContent, 4000, 'rounded');

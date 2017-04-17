@@ -64,7 +64,7 @@
         <%= f.input_field :message %>
       </div>
       <div class="right contact-button">
-        <%= f.button :submit, "Send" %>
+        <a class="rounded" onclick="Materialize.toast('Email Sent!', 4000)"><%= f.button :submit, "Send" %></a>
       </div>
     <% end %>
   </div>
