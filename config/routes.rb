@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   devise_for :influencers
   devise_for :users
 
-  resources :photographs
+  resources :photographs do
+    resources :auctions, only: [ :create ]
+  end
+  
   resources :users
   resources :influencers_profile
 

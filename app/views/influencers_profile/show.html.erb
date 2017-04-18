@@ -30,16 +30,21 @@
 </div>
 <script src="http://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+
+  console.log("Test1")
   var userFeed = new Instafeed({
     get: 'user',
     userId: '745531022',
-    clientId: ENV['INSTAGRAM_ID'],
-    accessToken: ENV['INSTAGRAM_ACCESS_TOKEN'],
+    clientId: "<%= ENV['INSTAGRAM_ID'] %>",
+    accessToken: "<%= ENV['INSTAGRAM_ACCESS_TOKEN']  %>",
     resolution: 'standard_resolution',
-    template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+    template: '<a href="{{link}}"><img src="{{image}}" /></a>',
     sortBy: 'most-recent',
     limit: 4,
     links: false
   });
   userFeed.run();
+});
+
 </script>

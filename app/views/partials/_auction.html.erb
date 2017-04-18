@@ -1,0 +1,12 @@
+<% unless @photograph.has_auction? %>
+
+  <h3>Put product for auction:</h3>
+
+  <%= form_for [ @photograph, Auction.new ] do |f| %>
+    <p>
+      <%= f.label :value %>
+      <%= f.text_field :value %>
+      <%= f.button 'Create Auction' %>
+    </p>
+  <% end %>
+<% end %>
