@@ -1,0 +1,15 @@
+<%= form_for [ @photograph, @photograph.auction, Bid.new ] do |f| %>
+  <p>
+    <strong>
+      Current Bid:
+    </strong>
+    AUD$ <%= @photograph.auction.current_bid %>
+  </p>
+
+  <p>
+    <%= f.text_field :value %>
+    <%= f.button 'Place Bid'%>
+  </p>
+
+
+<% end %>
