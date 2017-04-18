@@ -8,6 +8,6 @@ class PhotographPolicy
    end
 
    def update?
-     user.admin?
+     @user.admin?
    end
  end

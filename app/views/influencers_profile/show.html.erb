@@ -1,5 +1,45 @@
+<%= render 'partials/navbar' %>
+
 <h1 class="text-center"><%= @influencer.first_name %> <%= @influencer.last_name %>'s Profile</h1>
 
 
 <p>Name: <%= @influencer.first_name %> <%= @influencer.last_name %></p>
 <p>Description</p>
+
+
+<!-- <div id="instafeed"></div>
+
+<script type="text/javascript" src="path/to/instafeed.min.js"></script>
+
+<script type="text/javascript">
+  var userFeed = new Instafeed({
+    get: 'user',
+    userId: '745531022',
+    clientId: ENV['INSTAGRAM_ID'],
+    accessToken: ENV['INSTAGRAM_ACCESS_TOKEN'],
+    resolution: 'standard_resolution',
+    template: '<a href="{{link}}"><img src="{{image}}" /></a>',
+    sortBy: 'most-recent',
+    limit: 32,
+    links: false
+  });
+  userFeed.run();
+</script> -->
+
+<div id="instafeed">
+</div>
+<script src="http://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
+<script type="text/javascript">
+  var userFeed = new Instafeed({
+    get: 'user',
+    userId: '745531022',
+    clientId: ENV['INSTAGRAM_ID'],
+    accessToken: ENV['INSTAGRAM_ACCESS_TOKEN'],
+    resolution: 'standard_resolution',
+    template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+    sortBy: 'most-recent',
+    limit: 4,
+    links: false
+  });
+  userFeed.run();
+</script>
