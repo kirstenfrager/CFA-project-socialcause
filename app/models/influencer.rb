@@ -5,4 +5,5 @@ class Influencer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :photographs
+
 end

@@ -12,7 +12,7 @@
   <%= @photograph.author %>
 </p>
 
-<%= link_to 'Edit', edit_photograph_path(@photograph) %> |
+<%= link_to 'Edit', edit_photograph_path(@photograph) if (current_user && current_user.admin?) || current_influencer %> |
 <%= link_to 'Back', photographs_path %>
 
 <%= render 'partials/auction' %>

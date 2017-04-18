@@ -1,13 +1,16 @@
 class PhotographPolicy
-   attr_reader :user, :influencer, :post
+   attr_reader :user, :post
 
    def initialize(user, post)
      @user = user
-     @influencer = influencer
      @post = post
    end
 
    def update?
-     @user.admin?
+     if @user.class == Influencer
+       @post.influencer == @user
+     else
+       @user.admin?
+     end
    end
  end
