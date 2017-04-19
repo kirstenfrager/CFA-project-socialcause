@@ -1,0 +1,10 @@
+<% if @photograph.auction.top_bid.user_id == current_user.id %>
+  <p>
+    Congratulations! You won the auction.
+  </p>
+<% else %>
+  <p>
+    Sorry, this auction is now closed. <br>
+    You didn't win this item.
+  </p>
+<% end %>

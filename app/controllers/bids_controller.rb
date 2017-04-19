@@ -19,7 +19,6 @@ class BidsController < ApplicationController
     auction_id: params[:auction_id]
     )
   end
-
 end
 
 
