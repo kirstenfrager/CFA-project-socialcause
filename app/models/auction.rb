@@ -2,6 +2,7 @@ class Auction < ApplicationRecord
   belongs_to :photograph
   has_many :bids, :dependent => :destroy
 
+
   def top_bid
     bids.order(value: :desc).first
   end
