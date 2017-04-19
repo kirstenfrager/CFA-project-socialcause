@@ -1,10 +1,15 @@
-<% if @photograph.auction.top_bid.user_id == current_user.id %>
-  <p>
-    Congratulations! You won the auction.
-  </p>
-<% else %>
-  <p>
-    Sorry, this auction is now closed. <br>
-    You didn't win this item.
-  </p>
+<% if @photograph.has_auction? && @photograph.auction.top_bid %>
+  <% if @photograph.auction.top_bid.user_id == current_user.id %>
+    <p>
+      Congratulations! You won the auction.
+    </p>
+    <p>
+      <%= link_to "Claim this Item", transfer_photograph_path(@photograph), class: "waves-effect waves-light btn", method: :put %>
+    </p>
+  <% else %>
+    <p>
+      Sorry, this auction is now closed. <br>
+      You didn't win this item.
+    </p>
+  <% end %>
 <% end %>

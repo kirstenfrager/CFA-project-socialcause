@@ -1,34 +1,40 @@
-<% if @photograph.has_auction? %>
-  <% if @photograph.auction.ended? %>
-    <%= render 'auctions/status' %>
-  <% else %>
-    <%= form_for [ @photograph,  @photograph.auction, Bid.new], html: { multipart: true } do |f| %>
-      <p>
-        <% if @photograph.auction.top_bid.user_id == current_user.id %>
+<% if user_signed_in? %>
+  <% if @photograph.has_auction? %>
+    <% if @photograph.auction.ended? %>
+      <%= render 'auctions/status' %>
+    <% else %>
+      <%= form_for [ @photograph,  @photograph.auction, Bid.new], html: { multipart: true } do |f| %>
+        <p>
+          <% if @photograph.auction.top_bid %>
+            <% if @photograph.auction.top_bid.user_id == current_user.id %>
+              <strong>
+                Current Bid:
+              </strong>
+                AUD$ <%= @photograph.auction.current_bid %>
+            <% else %>
+              <strong>
+                You were outbid, new current bid:
+              </strong>
+                AUD$ <%= @photograph.auction.current_bid %>
+            <% end %>
+            <% else %>
+              <strong>
+                Minimum Bid is:
+              </strong>
+                AUD$ <%= @photograph.auction.current_bid %>
+          <% end %>
+        </p>
+        <p>
           <strong>
-            Current Bid:
+            Ends at:
           </strong>
-            AUD$ <%= @photograph.auction.current_bid %>
-        <% else %>
-          <strong>
-            You were outbid:
-          </strong>
-            AUD$ <%= @photograph.auction.current_bid %>
-        <% end %>
-      </p>
-  <% end %>
-
-    <p>
-      <strong>
-        Ends at:
-      </strong>
-      <%= l(@photograph.auction.ends_at, format: :short) %>
-    </p>
-
-    <p>
-      <%= f.text_field :value %>
-      <%= f.button 'Place Bid'%>
-    </p>
-
+          <%= l(@photograph.auction.ends_at, format: :short) %>
+        </p>
+        <p>
+          <%= f.text_field :value %>
+          <%= f.button 'Place Bid'%>
+        </p>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

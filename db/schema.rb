@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419001253) do
+ActiveRecord::Schema.define(version: 20170419053838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,9 @@ ActiveRecord::Schema.define(version: 20170419001253) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
     t.index ["influencer_id"], name: "index_photographs_on_influencer_id", using: :btree
+    t.index ["user_id"], name: "index_photographs_on_user_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -112,4 +114,5 @@ ActiveRecord::Schema.define(version: 20170419001253) do
   add_foreign_key "bids", "auctions"
   add_foreign_key "bids", "users"
   add_foreign_key "photographs", "influencers"
+  add_foreign_key "photographs", "users"
 end

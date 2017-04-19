@@ -66,6 +66,16 @@ class PhotographsController < ApplicationController
     end
   end
 
+  def transfer
+    photograph = Photograph.find(params[:id])
+      if photograph.auction.ended?
+        photograph.update_attribute :user_id, photograph.auction.top_bid.user_id
+        redirect_to photograph_path, notice: "Successfully transfered this item."
+      else
+        redirect_to photograph_path, notice: "Sorry, the auction hasn't ended yet."
+      end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photograph
