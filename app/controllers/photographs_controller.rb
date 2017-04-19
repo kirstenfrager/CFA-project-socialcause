@@ -42,7 +42,7 @@ class PhotographsController < ApplicationController
   # PATCH/PUT /photographs/1.json
   def update
     @photograph = Photograph.find(params[:id])
-#require 'pry'; binding.pry    
+#require 'pry'; binding.pry
     authorize @photograph
 
     respond_to do |format|

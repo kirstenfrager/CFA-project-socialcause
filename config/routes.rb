@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :users
   resources :influencers_profile
 

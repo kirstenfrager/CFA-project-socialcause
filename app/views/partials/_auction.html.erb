@@ -6,6 +6,10 @@
     <p>
       <%= f.label :value %>
       <%= f.text_field :value %>
+    </p>
+    <p>
+      <%= f.label :ends_at %>
+      <%= f.datetime_select :ends_at %>
       <%= f.button 'Create Auction' %>
     </p>
   <% end %>
