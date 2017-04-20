@@ -5,6 +5,9 @@ class PhotographsController < ApplicationController
   # GET /photographs.json
   def index
     @photographs = Photograph.all
+
+    @search = Photograph.ransack(params[:q])
+    @photographs = @search.result(distinct: true)
   end
 
   # GET /photographs/1
