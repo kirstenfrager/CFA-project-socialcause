@@ -1,5 +1,13 @@
 <%= render "partials/navbar" %>
 
+<%= search_form_for @search do |f| %>
+ <div class="field">
+   <%= f.label :title_or_author_cont, "Title/Author contains" %>
+   <%= f.text_field :title_or_author_cont %>
+ </div>
+ <div class="actions"><%= f.submit "Search" %><div>
+<% end %>
+
 <div class="contact-flash center-align raleway italic">
   <p><%= flash[:warning] %></p>
 </div>
