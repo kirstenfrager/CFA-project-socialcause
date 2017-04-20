@@ -1,21 +1,24 @@
 <%= render 'partials/navbar' %>
 
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col m12">
+    <h2 class="contact-title raleway italic"> <%= @photograph.title %><span style="font-size:40px; font-style:normal"> by </span><%= @photograph.author %>.</h2>
+  <div class="divider"></div>
+  </div>
+</div>
 
-<%= image_tag @photograph.image.url(:medium) %>
+<div class="row">
+  <div class="col m6">
+    <p id="notice"><%= notice %></p>
+    <%= image_tag @photograph.image.url(:large) %>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @photograph.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @photograph.author %>
-</p>
-
-<%= link_to 'Edit |', edit_photograph_path(@photograph) if (current_user && current_user.admin?) || current_influencer %>
-<%= link_to 'Back', photographs_path %>
-
-<%= render 'partials/auction' %>
-<%= render 'partials/bid' %>
+  <div class="col m 6">
+    <%= render 'partials/auction' %>
+    <%= render 'partials/bid' %>
+    <p>
+      <%= link_to 'Edit |', edit_photograph_path(@photograph) if (current_user && current_user.admin?) || current_influencer %>
+      <%= link_to 'Back', photographs_path %>
+    </p>
+  </div>
+</div>
