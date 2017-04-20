@@ -3,8 +3,10 @@ class ChargesController < ApplicationController
   end
 
   def create
+    @photograph = Photograph.find(params[:id])
+    @auction = @photograph.auction
     # Amount in cents
-    # @amount = 500
+    @amount = (@photograph.auction.current_bid * 100).to_i
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -15,11 +17,16 @@ class ChargesController < ApplicationController
       :customer    => customer.id,
       :amount      => @amount,
       :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+      :currency    => 'aud'
     )
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+
+  def confirmation
+    @photograph = Photograph.find(params[:id])
+    @auction = @photograph.auction
   end
 end

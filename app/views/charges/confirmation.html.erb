@@ -1,0 +1,11 @@
+<%= @auction.inspect %>
+
+<h3 class="raleway">Please confirm your purchase.</h3>
+
+<div class="row">
+  <div class="col m4">
+    <%= image_tag @photograph.image.url(:medium) %>
+  </div>
+</div>
+
+<%= render 'partials/stripe' %>
