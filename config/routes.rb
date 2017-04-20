@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     end
     member do
       put :transfer
+      resources :charges
     end
   end
+
 
   resources :users
   resources :influencers_profile

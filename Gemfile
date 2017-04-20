@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'stripe'
 gem 'hirb'
 gem 'materialize-form'
 gem 'simple_form'
