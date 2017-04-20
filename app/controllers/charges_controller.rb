@@ -7,7 +7,6 @@ class ChargesController < ApplicationController
     @auction = @photograph.auction
     # Amount in cents
     @amount = (@photograph.auction.current_bid * 100).to_i
-    @user = User.find(params[:id])
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -19,7 +18,7 @@ class ChargesController < ApplicationController
       :amount      => @amount,
       :description => 'Thank you for your generous contribution.',
       :currency    => 'aud',
-      :receipt_email => @user.email
+      :receipt_email => current_user.email
     )
 
   rescue Stripe::CardError => e
