@@ -4,7 +4,7 @@
       Congratulations! You won the auction.
     </p>
     <p>
-      <%= link_to "Confirm", transfer_photograph_path(@photograph), class: "waves-effect waves-light btn", method: :put %>
+      <%= link_to "Confirm", transfer_photograph_path(@photograph), id: "show_button", class: "waves-effect waves-light btn", method: :put %>
     </p>
   <% else %>
     <p>
@@ -13,3 +13,13 @@
     </p>
   <% end %>
 <% end %>
+
+<script type="text/javascript">
+    var button = document.getElementById('show_button')
+    button.addEventListener('click',hideshow,false);
+
+    function hideshow() {
+        document.getElementById('hidden-div').style.display = 'block';
+        this.style.display = 'none'
+    }
+</script>

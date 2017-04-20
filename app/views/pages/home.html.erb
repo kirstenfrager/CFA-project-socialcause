@@ -4,13 +4,13 @@
 
 <p><%= flash[:notice] %></p>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="carousel picture-card">
+  <% @photographs.each do |photograph| %>
+   <a class="carousel-item">
+     <%= image_tag photograph.image.url(:medium), class: "home-img-size" %>
+     <p class="center-align raleway font-black carousel-text"><%= photograph.title %><br><span class="nothing-font carousel-span-text"> by </span><br><%= photograph.author %></p>
+   </a>
+  <% end %>
+</div>
 
-<p>
-- carousel of pictures currently being auctioned/sold <br>
-- navbar
-</p>
-
-<%= current_influencer.inspect %>
-<%#= session.inspect %>
+<div class="divider"></div>

@@ -29,6 +29,10 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.nothing-font {
+  font-family: 'Nothing You Could Do', cursive;
+}
+
 .small-writing {
   font-size: 12px;
 }
@@ -99,4 +103,30 @@
       height: 100%;
     }
   }
+}
+
+.carousel {
+  height: 600px;
+}
+
+.carousel-item {
+  height: 600px !important;
+  width: 400px !important;
+}
+
+.home-img-size {
+  height: 500px;
+  width: 370px !important;
+}
+
+.font-black {
+  color: black;
+}
+
+.carousel-span-text {
+  font-size: 14px;
+}
+
+.carousel-text {
+  font-size: 16px;
 }

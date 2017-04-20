@@ -11,4 +11,8 @@ class PagesController < ApplicationController
 #   def home
 #     @instagram = Instagram.user_recent_media("745531022", {:count => 1})
 # end
+
+  def home
+    @photographs = Photograph.all
+  end
 end
