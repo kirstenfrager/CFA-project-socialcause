@@ -17,6 +17,13 @@
 //= require materialize-sprockets
 //= require materialize-form
 
+
+
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+
 // toast
-  // var $toastContent = $('<span>Email Sent!</span>');
-  //   Materialize.toast($toastContent, 4000, 'rounded');
+var $toastContent = $('<span>Email Sent!</span>');
+Materialize.toast($toastContent, 4000, 'rounded');

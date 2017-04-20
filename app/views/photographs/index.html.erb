@@ -1,12 +1,19 @@
 <%= render "partials/navbar" %>
 
 <%= search_form_for @search do |f| %>
- <div class="field">
-   <%= f.label :title_or_author_cont, "Title/Author contains" %>
-   <%= f.text_field :title_or_author_cont %>
- </div>
- <div class="actions"><%= f.submit "Search" %><div>
+  <div class="row">
+    <div class="col m4 offset-m3">
+      <div class="field">
+        <%= f.label :title_or_author_cont, "Title/Author contains" %>
+        <%= f.text_field :title_or_author_cont %>
+      </div>
+    </div>
+    <div class="col m3">
+      <div class="actions waves-effect waves-light btn button-smaller-top"><%= f.submit "Search" %></div>
+    </div>
+  </div>
 <% end %>
+
 
 <div class="contact-flash center-align raleway italic">
   <p><%= flash[:warning] %></p>
@@ -33,6 +40,3 @@
 </div>
 
 <%= link_to 'New Photograph', new_photograph_path if (current_user && current_user.admin?) || current_influencer %>
-
-
-<!-- if current_user.admin? -->

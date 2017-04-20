@@ -20,10 +20,3 @@ class BidsController < ApplicationController
     )
   end
 end
-
-
-# if service.execute
-#   redirect_to :photograph_path(params[:photograph_id], notice: 'Bid successfully placed.'
-# else
-#   redirect_to photograph_path(params[:photograph_id], alert: 'Error: Please try again.')
-# end
