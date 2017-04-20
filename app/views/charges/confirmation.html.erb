@@ -1,11 +1,19 @@
-<%= @auction.inspect %>
-
 <h3 class="raleway">Please confirm your purchase.</h3>
+<div class="divider"></div>
 
 <div class="row">
-  <div class="col m4">
-    <%= image_tag @photograph.image.url(:medium) %>
+  <div class="col m6">
+    <p id="notice"><%= notice %></p>
+    <%= image_tag @photograph.image.url(:large) %> <br>
+    <%= link_to 'Back', :back %>
+  </div>
+
+  <div class="col m6 center-align">
+    <h2 class="nothing-font button-smaller-top"><%= @photograph.title %> <br> by <br> <%= @photograph.author %> </h2>
+    <p class="total-charity raleway">
+      <span class="raised-money">$<%= @photograph.auction.current_bid %></span> <br>
+      <span style="font-size:20px"> has been raised for charity.</span>
+    </p>
+      <%= render 'partials/stripe' %>
   </div>
 </div>
-
-<%= render 'partials/stripe' %>
