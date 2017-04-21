@@ -39,4 +39,6 @@
   <% end %>
 </div>
 
-<%= link_to 'New Photograph', new_photograph_path if (current_user && current_user.admin?) || current_influencer %>
+<div class="row center-align">
+    <h2 class="raleway"><%= link_to 'Place an item up for Auction', new_photograph_path if (current_user && current_user.admin?) || current_influencer %></h2>
+</div>

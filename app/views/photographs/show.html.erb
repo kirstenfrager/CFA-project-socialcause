@@ -13,12 +13,19 @@
     <%= image_tag @photograph.image.url(:large) %>
   </div>
 
-  <div class="col m 6">
+  <div class="col m6">
+    <% if influencer_signed_in? %>
+      <%= render 'partials/influencer-show' %>
+    <% end %>
+  </div>
+
+  <div class="col m6">
     <%= render 'partials/auction' %>
     <%= render 'partials/bid' %>
-    <p>
+
+    <div class="right button-smaller-top">
       <%= link_to 'Edit |', edit_photograph_path(@photograph) if (current_user && current_user.admin?) || current_influencer %>
       <%= link_to 'Back', photographs_path %>
-    </p>
+    </div>
   </div>
 </div>
