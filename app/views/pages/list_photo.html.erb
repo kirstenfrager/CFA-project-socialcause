@@ -1,0 +1,32 @@
+<%= render 'partials/navbar' %>
+
+<h4 class="raleway button-smaller-top button-space italic">Current Items up for Auction.</h4>
+  <table class="highlight centered">
+    <thead class="raleway">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Auction Amount $</th>
+      </tr>
+    </thead>
+    <% @photographs.each do |photograph| %>
+      <tbody>
+        <tr>
+          <td><%= image_tag photograph.image.url(:thumb) %></td>
+          <td><%= photograph.author %></td>
+          <td><%= photograph.title %></td>
+          <td><%= photograph.auction.current_bid %></td>
+          <td><%= link_to 'Edit', edit_photograph_path(photograph) %></td>
+          <td><%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+<div class="right">
+    <%= will_paginate @photographs %>
+</div>
+<br> <br>
+<div class="row right">
+  <%= link_to 'Back', pages_admin_dashboard_path %>
+</div>
