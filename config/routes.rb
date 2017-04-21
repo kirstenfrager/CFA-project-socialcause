@@ -22,20 +22,15 @@ Rails.application.routes.draw do
   resources :influencers_profile
 
   get 'contact/contact_page'
-
   get 'lists/influencer_list'
-
   get 'lists/photo_list'
-
   get 'influencers_profile/show'
-
   get 'pages/about'
-
   get 'pages/charity'
-
   get 'pages/admin_dashboard'
-
   get 'pages/list_influencer'
+  get 'pages/list_photo'
+  get 'pages/list_user'
 
   root 'pages#home'
   get '/callback' => 'pages#callback'

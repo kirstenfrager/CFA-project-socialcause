@@ -1,6 +1,6 @@
 <%= render 'partials/navbar' %>
 
-<h4 class="raleway button-smaller-top italic">List of Regisered Influencers.</h4>
+<h4 class="raleway button-smaller-top button-space italic">List of registered influencers.</h4>
   <table class="highlight centered">
     <thead class="raleway">
       <tr>
@@ -23,9 +23,9 @@
   </table>
 
 <div class="right">
-    <%= will_paginate @influencers %>
+  <%= will_paginate @influencers %>
 </div>
 <br> <br>
 <div class="row right">
-  <%= link_to 'Back', :back %>
+  <%= link_to 'Back', pages_admin_dashboard_path %>
 </div>

@@ -30,4 +30,9 @@ class PagesController < ApplicationController
     @influencers = Influencer.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
     @i_paginator = @influencers.group_by { |r| r.created_at.to_date }
   end
+
+  def list_user
+    @users = User.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    @u_paginator = @users.group_by { |r| r.created_at.to_date }
+  end
 end
