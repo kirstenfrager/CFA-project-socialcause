@@ -1,16 +1,26 @@
 <% unless @photograph.has_auction? %>
 
-  <h3>Put product for auction:</h3>
+  <h4 class="raleway button-space">Put product for auction:</h4>
 
   <%= form_for [ @photograph, Auction.new ] do |f| %>
-    <p>
-      <%= f.label :value %>
-      <%= f.text_field :value %>
-    </p>
-    <p>
-      <%= f.label :ends_at %>
-      <%= f.datetime_select :ends_at %>
-      <%= f.button 'Create Auction', class: "waves-effect waves-light btn" %>
-    </p>
+    <div class="row button-smaller-top">
+      <div class="col m4 offset-m1 center-align button-smaller-top">
+        <div class="field">
+          <%= f.label 'Starting Amount $' %><br/>
+          <%= f.text_field :value %>
+        </div>
+      </div>
+
+      <div class="col m6 center-align button-smaller-top">
+        <%= f.label :ends_at %>
+        <%= f.datetime_local_field :ends_at %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col m6 offset-m4">
+        <%= f.button 'Create Auction', class: "waves-effect waves-light btn" %>
+      </div>
+    </div>
   <% end %>
 <% end %>

@@ -16,13 +16,16 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize-form
+//= require jquery.datetimepicker
 
 
 
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.carousel').carousel();
 });
+
+$('.datetimepicker').datetimepicker();
 
 // toast
 var $toastContent = $('<span>Email Sent!</span>');

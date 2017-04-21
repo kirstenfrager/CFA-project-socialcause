@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.datetimepicker
  */
 
  @import "materialize";
@@ -47,9 +48,16 @@
   margin-top: 1em;
 }
 
+.divider-div {
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
 .navbar-row {
   margin-top: 5em;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   font-family: 'Slabo 27px', serif;
   font-size: 18px;
   a {
