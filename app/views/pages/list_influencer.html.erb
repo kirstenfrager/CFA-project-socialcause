@@ -1,0 +1,31 @@
+<%= render 'partials/navbar' %>
+
+<h4 class="raleway button-smaller-top italic">List of Regisered Influencers.</h4>
+  <table class="highlight centered">
+    <thead class="raleway">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Social Media</th>
+      </tr>
+    </thead>
+    <% @influencers.each do |influencer| %>
+      <tbody>
+        <tr>
+          <td><%= influencer.first_name %> <%= influencer.last_name %> </td>
+          <td><%= influencer.email %></td>
+          <td><%= influencer.mobile %></td>
+          <td><%= influencer.social_media %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+
+<div class="right">
+    <%= will_paginate @influencers %>
+</div>
+<br> <br>
+<div class="row right">
+  <%= link_to 'Back', :back %>
+</div>

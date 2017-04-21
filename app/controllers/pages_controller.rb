@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
+  before_filter :authorize_admin, :admin_dashboard, :list_influencer
 
   def callback
     # binding.pry
@@ -14,5 +16,18 @@ class PagesController < ApplicationController
 
   def home
     @photographs = Photograph.all
+  end
+
+  def admin_dashboard
+    @photographs = Photograph.all
+    @influencers = Influencer.all
+
+    @photographs = Photograph.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    @p_paginator = @photographs.group_by { |r| r.created_at.to_date }
+  end
+
+  def list_influencer
+    @influencers = Influencer.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    @i_paginator = @influencers.group_by { |r| r.created_at.to_date }
   end
 end

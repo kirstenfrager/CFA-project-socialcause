@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'will_paginate', '~> 3.1.0'
 gem 'jquery-datetimepicker-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'stripe'

@@ -1,0 +1,40 @@
+<%= render 'partials/navbar' %>
+
+<h2 class="raleway">Admin Dashboard.</h2>
+
+<div class="divider"></div>
+
+          <%#= link_to photograph.author, photograph_path(photograph) %>
+          <!-- <a href="#">This is a link</a> -->
+          <%#= link_to 'Edit', edit_photograph_path(photograph) if current_user.admin? %>
+
+<h4 class="raleway button-smaller-top italic">Current Items up for Auction.</h4>
+  <table class="highlight centered">
+    <thead class="raleway">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Current Bid</th>
+      </tr>
+    </thead>
+    <% @photographs.each do |photograph| %>
+      <tbody>
+        <tr>
+          <td><%= image_tag photograph.image.url(:thumb) %></td>
+          <td><%= photograph.author %></td>
+          <td><%= photograph.title %></td>
+          <td><%= photograph.auction.current_bid %></td>
+          <td><%= link_to 'Edit', edit_photograph_path(photograph) %></td>
+          <td><%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+<div class="right">
+    <%= will_paginate @photographs %>
+</div>
+
+<%= link_to pages_list_influencer_path do %>
+   <%= image_tag "http://www.internetbillboards.net/wp-content/uploads/social-influence-300x300.png", class: "" %>
+<% end %>

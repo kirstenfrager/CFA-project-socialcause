@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  before_action :authenticate_user!
+
   def pundit_user
     current_user || current_influencer
   end
@@ -20,5 +22,9 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     redirect_to("/photographs")
     flash[:warning] = "You are not authorized to perform this action."
+  end
+
+  def authorize_admin
+    redirect_to '/', status: 401 unless current_user.admin?  
   end
 end

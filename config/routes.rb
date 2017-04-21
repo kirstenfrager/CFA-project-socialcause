@@ -12,11 +12,9 @@ Rails.application.routes.draw do
     end
     member do
       put :transfer
-      resources :charges do
-        member do
-          get 'confirmation', to: 'charges#confirmation'
-        end
-      end
+    end
+    resources :charges do
+      get 'confirmation', to: 'charges#confirmation'
     end
   end
 
@@ -34,6 +32,10 @@ Rails.application.routes.draw do
   get 'pages/about'
 
   get 'pages/charity'
+
+  get 'pages/admin_dashboard'
+
+  get 'pages/list_influencer'
 
   root 'pages#home'
   get '/callback' => 'pages#callback'
