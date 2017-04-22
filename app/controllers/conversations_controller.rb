@@ -14,6 +14,14 @@ class ConversationsController < ApplicationController
     redirect_to conversation_messages_path(@conversation)
   end
 
+  def destroy
+    @conversation.destroy
+    respond_to do |format|
+      format.html { redirect_to conversation, notice: 'Conversation was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     def conversation_params
       params.permit(:sender_id, :recipient_id)

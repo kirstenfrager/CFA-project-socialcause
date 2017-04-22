@@ -15,8 +15,16 @@
     <div class="col s12 m6 l2">
       <a href="/pages/about">About Us</a>
     </div>
-    <div class="col s12 m6 l2">
-      <a href="/connect">Contact</a>
+    <div class="col s12 m6 l2 grey-link" id="primary_nav_wrap">
+      <ul>
+        <li><a href="/connect">Contact</a>
+          <ul>
+            <% if user_signed_in? %>
+              <li><a href="/conversations">Mailbox</a></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

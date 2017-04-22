@@ -69,8 +69,39 @@
   color: black;
 }
 
-.line-height {
-  line-height: 10%;
+// navbar hover
+#primary_nav_wrap ul {
+	margin: 0;
+}
+
+#primary_nav_wrap ul a {
+	display: block;
+	text-decoration: none;
+  padding: 0 18px;
+}
+
+#primary_nav_wrap ul li {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+#primary_nav_wrap ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	background: #fff;
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height: 120%;
+	padding-top: 20px;
+  margin-left: 1em;
+}
+
+#primary_nav_wrap ul li:hover > ul {
+	display:block
 }
 
 .grey-link a {

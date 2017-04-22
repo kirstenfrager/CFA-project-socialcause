@@ -1,5 +1,9 @@
 <%= render "partials/navbar" %>
 
+<div class="row center-align">
+    <h2 class="raleway"><%= link_to 'Place an item up for Auction', new_photograph_path if (current_user && current_user.admin?) || current_influencer %></h2>
+</div>
+
 <%= search_form_for @search do |f| %>
   <div class="row">
     <div class="col m4 offset-m3">
@@ -37,8 +41,4 @@
       </div>
     </div>
   <% end %>
-</div>
-
-<div class="row center-align">
-    <h2 class="raleway"><%= link_to 'Place an item up for Auction', new_photograph_path if (current_user && current_user.admin?) || current_influencer %></h2>
 </div>
