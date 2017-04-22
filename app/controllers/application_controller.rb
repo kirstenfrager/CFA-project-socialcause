@@ -2,14 +2,14 @@ class ApplicationController < ActionController::Base
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  # before_action :authenticate_influencer!
 
   def pundit_user
     current_user || current_influencer
   end
 
   protect_from_forgery with: :exception
-  # before_action :authenticate_user!
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_admin
-    redirect_to '/', status: 401 unless current_user.admin?  
+    # redirect_to '/', status: 401 unless current_user.admin?
   end
 end
