@@ -9,15 +9,15 @@
 
 <div class="row">
   <div class="col m6">
-    <p id="notice"><%= notice %></p>
+    <p class="center-align" id="notice"><%= notice %></p>
     <%= image_tag @photograph.image.url(:large) %>
   </div>
 
-  <div class="col m6">
-    <%# if influencer_signed_in? %>
+  <% if @photograph.has_auction? %>
+    <div class="col m6">
       <%= render 'partials/influencer-show' %>
-    <%# end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="col m6">
     <%= render 'partials/auction' %>

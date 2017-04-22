@@ -1,4 +1,4 @@
-<%= form_for photograph, html: { multipart: true } do |f| %>
+<%= simple_form_for photograph, html: { multipart: true } do |f| %>
   <% if photograph.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(photograph.errors.count, "error") %> prohibited this photograph from being saved:</h2>
@@ -11,22 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="row contact-content">
+    <div class="col m5 offset-m5">
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="col m7 offset-m3">
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+  <div class="row">
+    <div class="col m7 offset-m3">
+      <div class="field">
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="col m5 offset-m5">
+      <%= f.button :submit %>
+    </div>
   </div>
 <% end %>

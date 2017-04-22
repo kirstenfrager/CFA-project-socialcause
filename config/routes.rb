@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   resources :users
   resources :influencers_profile
 
+  resources :conversations do
+    resources :messages
+  end
+
   get 'contact/contact_page'
   get 'lists/influencer_list'
-  get 'lists/photo_list'
   get 'influencers_profile/show'
   get 'pages/about'
   get 'pages/charity'

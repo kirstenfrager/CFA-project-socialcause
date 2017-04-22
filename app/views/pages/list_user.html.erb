@@ -8,6 +8,7 @@
         <th>Email</th>
         <th>Mobile</th>
         <th>Address</th>
+        <th>Contact</th>
       </tr>
     </thead>
     <% @users.each do |user| %>
@@ -17,6 +18,11 @@
           <td><%= user.email %></td>
           <td><%= user.mobile %></td>
           <td><%= user.address %></td>
+          <td class="grey-link">
+            <%= link_to conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' do%>
+              <i class="material-icons">email</i>
+            <% end%>
+          </td>
         </tr>
       </tbody>
     <% end %>
