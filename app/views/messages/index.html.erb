@@ -1,34 +1,58 @@
-<div class="container">
+<%= render 'partials/navbar' %>
 
-<% if @over_ten %>
- <%= link_to 'Show Previous', '?m=all' %>
-<% end %>
+<h2 class="raleway">Messenger.</h2>
+
+<div class="divider">
+</div>
+
+  <div class="row">
+    <div class="col m4 offset-m4">
+      <% if @over_ten %>
+        <%= link_to 'Show Previous', '?m=all' %>
+      <% end %>
+    </div>
+  </div>
+
 <div class="ui segment">
- <% @messages.each do |message| %>
-  <% if message.body %>
-   <% user = User.find(message.user_id) %>
-   <div class="item">
-    <div class="content">
-     <div class="header"><strong><%= user.first_name %></strong>     <%= message.message_time %></div>
-      <div class="list">
-       <div class="item">
-        <i class="right triangle icon"></i>
-         <%= message.body %>
+  <% @messages.each do |message| %>
+    <div class="row">
+      <% if message.body %>
+        <div class="col m6 offset-m3 divider-div">
+          <% user = User.find(message.user_id) %>
+          <div class="raleway right">
+            <strong><%= user.first_name %></strong> @ <%= message.message_time %>
+          </div>
+          <br>
+          <div class="button-smaller-top button-space">
+            <%= message.body %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+  <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+    <div class="row">
+      <div class="col m5 offset-m3">
+        <%= f.text_area :body, class: "form-control" %>
+      </div>
+      <div class=" col m2">
+        <%= f.submit "Send", class: "waves-effect waves-light btn" %>
       </div>
     </div>
-   </div>
- </div>
- <% end %>
-<% end %>
+
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+
+    <div class="row">
+
+    </div>
+  <% end %>
+
+<div class="right button-space">
+  <% if current_user.admin? %>
+    <%= link_to 'Back', pages_list_user_path %>
+  <% else %>
+    <%= link_to 'Back', conversations_path %>
+  <% end %>
 </div>
-<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
-<div class="row">
- <div class="input-field col s6">
-   <%= f.text_area :body, class: "form-control" %>
- </div>
- </div>
- <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
- <div>
-   <%= f.submit "Add Reply", class: "waves-effect waves-light btn" %>
- </div>
-<% end %>
