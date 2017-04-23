@@ -12,9 +12,11 @@ Rails.application.routes.draw do
     end
     member do
       put :transfer
-    end
-    resources :charges do
-      get 'confirmation', to: 'charges#confirmation'
+      resources :charges do
+       member do
+           get 'confirmation', to: 'charges#confirmation'
+         end
+       end
     end
   end
 

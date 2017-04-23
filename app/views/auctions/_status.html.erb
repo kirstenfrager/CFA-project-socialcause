@@ -1,15 +1,16 @@
 <% if @photograph.has_auction? && @photograph.auction.top_bid %>
   <% if @photograph.auction.top_bid.user_id == current_user.id %>
-    <p>
-      Congratulations! You won the auction.
-    </p>
-    <p>
-      <%= link_to "Confirm", transfer_photograph_path(@photograph), class: "waves-effect waves-light btn", method: :put %>
-    </p>
+  <div class="row raleway">
+    <div class="col m12 center-align button-smaller-top">
+        <h4 class="nothing-font">Congratulations!</h4>
+        <p>You won the auction.</p>
+        <%= link_to "Confirm", transfer_photograph_path(@photograph), class: "waves-effect waves-light btn", method: :put %>
+    </div>
+  </div>
   <% else %>
-    <p>
-      Sorry, this auction is now closed. <br>
-      You didn't win this item.
-    </p>
+  <div class="row raleway">
+    <div class="col m12 center-align button-smaller-top">
+      <p>Sorry, this auction is now closed. <br>
+      You didn't win this item.</p>
   <% end %>
 <% end %>

@@ -4,34 +4,36 @@
       <%= render 'auctions/status' %>
     <% else %>
       <%= form_for [ @photograph,  @photograph.auction, Bid.new], html: { multipart: true } do |f| %>
-        <p>
+
           <% if @photograph.auction.top_bid %>
             <% if @photograph.auction.top_bid.user_id == current_user.id %>
-              <strong>
-                Current Bid:
-              </strong>
-                AUD$ <%= @photograph.auction.current_bid %>
+              <div class="row raleway">
+                <div class="col m4 offset-m4 center-align button-space-top">
+                  <strong>Current Bid: </strong> <br>
+                  AUD$ <%= @photograph.auction.current_bid %>
             <% else %>
-              <strong>
-                You were outbid, new current bid:
-              </strong>
-                AUD$ <%= @photograph.auction.current_bid %>
+                  <strong>You were outbid, new current bid: </strong> <br>
+                  AUD$ <%= @photograph.auction.current_bid %>
+                </div>
+              </div>
             <% end %>
-            <% else %>
-              <strong>
-                Minimum Bid is:
-              </strong>
-                AUD$ <%= @photograph.auction.current_bid %>
+          <% else %>
+          <div class="row raleway">
+            <div class="col m4 center-align offset-m4 button-space-top">
+              <strong>Minimum Bid is: </strong> <br>
+              AUD$ <%= @photograph.auction.current_bid %>
           <% end %>
-        </p>
-        <p>
-          <strong>
-            Ends at:
-          </strong>
-          <%= l(@photograph.auction.ends_at, format: :short) %>
-        </p>
+            </div>
+          </div>
 
-        <div class="bgimg">
+          <div class="row raleway">
+            <div class="col m4 center-align offset-m4">
+              <strong>Ends at: </strong> <br>
+              <%= l(@photograph.auction.ends_at, format: :short) %>
+            </div>
+          </div>
+
+        <!-- <div class="bgimg">
            <div class="middle">
              <p id="demo"></p>
            </div>
@@ -61,15 +63,15 @@
                    document.getElementById("demo").innerHTML = "EXPIRED";
                }
            }, 1000);
-         </script>
+         </script> -->
 
-           <p>
-             <div class="input-field col s12">
+             <div class="input-field col m4 offset-m4">
                <label for="password">Amount</label>
                 <%= f.text_field :value, class: "validate" %>
               </div>
-            <%= f.button 'Place Bid', class: "waves-effect waves-light btn"%>
-          </p>
+              <div class="col m12 center-align">
+                <%= f.button 'Place Bid', class: "waves-effect waves-light btn"%>
+              </div>
       <% end %>
     <% end %>
   <% end %>

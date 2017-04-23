@@ -29,12 +29,15 @@
     <div class="col s5 m4 center-align picture-card">
       <div class="card hoverable">
         <div class="card-image photo-size">
-          <%= image_tag photograph.image.url(:medium) %>
-          <span class="card-title raleway-bold"><%= photograph.title %></span>
+          <div class="materialboxed">
+            <%= image_tag photograph.image.url(:medium) %>
+          </div>
+          <span class="card-title raleway-bold">
+            <%= photograph.title %>
+          </span>
         </div>
         <div class="card-action raleway-bold">
           <%= link_to photograph.author, photograph_path(photograph) %> <br>
-          <!-- <a href="#">This is a link</a> -->
           <%= link_to 'Edit', edit_photograph_path(photograph) if (current_user && current_user.admin?) || current_influencer %>
           <%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } if (current_user && current_user.admin?) || current_influencer %>
         </div>
