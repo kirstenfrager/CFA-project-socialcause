@@ -27,6 +27,11 @@ $(document).on('turbolinks:load', function(){
 
 $('.datetimepicker').datetimepicker();
 
+$(document).ready(function(){
+   $('.materialboxed').materialbox();
+ });
+       
+
 // toast
 var $toastContent = $('<span>Email Sent!</span>');
 Materialize.toast($toastContent, 4000, 'rounded');

@@ -30,6 +30,11 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.raleway-bold {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+}
+
 .nothing-font {
   font-family: 'Nothing You Could Do', cursive;
 }
@@ -53,6 +58,10 @@
   border-bottom: 1px solid #E0E0E0;
   padding-bottom: 1em;
   padding-top: 1em;
+}
+
+.divider-div-bottom {
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .navbar-row {
