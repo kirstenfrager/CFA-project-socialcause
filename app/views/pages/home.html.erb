@@ -4,7 +4,7 @@
 
 <div class="carousel picture-card">
   <% @photographs.each do |photograph| %>
-   <a class="carousel-item" href="#">
+   <a class="carousel-item" href="/photographs">
      <%= image_tag photograph.image.url(:medium), class: "home-img-size one-edge-shadow" %>
      <p class="center-align raleway font-black carousel-text"><%= photograph.title %><br><span class="nothing-font carousel-span-text"> by </span><br><%= photograph.author %></p>
    </a>
@@ -12,3 +12,30 @@
 </div>
 
 <div class="divider"></div>
+
+<div class="row blurb-section center-align">
+  <div class="col m12 center-align">
+    <div class="home-title">
+      <h2 class="raleway button-space">We are Influence This.</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row picture-card">
+  <div class="col m4">
+    <h4 class="raleway-bold center-align button-space">We Care.</h4>
+    <p class="grey-link">100% of profits made from each auctioned item goes to charity. For a list of charities we are currently involved with please click <a class="italic "href="/pages/charity ">here</a>. If youa are a charity would like to reach out to us please <a class="italic "href="/pages/connect">contact us</a>.</p>
+  </div>
+  <div class="col m4">
+    <h4 class="raleway-bold center-align button-space">We Connect.</h4>
+    <p class="grey-link">We specialise in charity and influencer collaboration. Our featured influencers are carefully chosen and are the influencers of the digital age. To see who we are currently collaborating with please view our <a class="italic" href="/lists/influencer_list">influencers</a>.</p>
+  </div>
+  <div class="col m4">
+    <h4 class="raleway-bold center-align button-space">We Deliver.</h4>
+    <p>Each influencer's expertise in their chosen field assures the highest quality of work; combined with our printing sponsors <span class="italic">HQ Print</span>, we guarantee quality and satisfaction with all our items.</p>
+  </div>
+</div>
+
+<div class="divider button-space"></div>
+
+<div class="footer grey-fill">This footer will always be positioned at the bottom of the page, but <strong>not fixed</strong>.</div>
