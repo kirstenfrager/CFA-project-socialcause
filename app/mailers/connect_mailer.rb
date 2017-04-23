@@ -8,9 +8,9 @@ class ConnectMailer < ApplicationMailer
     @email = email
     @message = message
     mail(to: "kirsten.frager@hotmail.com",
-          subject: 'New message from website') do |format|
-          format.html { render 'connect_mailer' }
-          format.text { render 'connect_mailer' }
-        end
+      subject: 'New message from website') do |format|
+        format.html { render 'connect_mailer' }
+        format.text { render 'connect_mailer' }
+      end
   end
 end
