@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// home page:
+.one-edge-shadow {
+  -webkit-box-shadow: 2px 8px 10px -4px black;
+     -moz-box-shadow: 2px 8px 10px -4px black;
+          box-shadow: 2px 8px 10px -4px black;
+}
+
 
 // about page:
 .border-right {
@@ -41,5 +48,4 @@
 
 .admin-img {
   height: 300px;
-
 }
