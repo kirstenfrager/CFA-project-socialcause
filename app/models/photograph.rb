@@ -15,7 +15,7 @@ class Photograph < ApplicationRecord
   def slug_candidates
      [
        :title,
-       :author,
+       [:title, :author]
      ]
    end
 end
