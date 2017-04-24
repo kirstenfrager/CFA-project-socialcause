@@ -46,7 +46,7 @@ class PhotographsController < ApplicationController
   # PATCH/PUT /photographs/1
   # PATCH/PUT /photographs/1.json
   def update
-    @photograph = Photograph.find(params[:id])
+    @photograph = Photograph.friendly.find(params[:id])
 #require 'pry'; binding.pry
     authorize @photograph
 
