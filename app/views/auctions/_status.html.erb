@@ -4,7 +4,11 @@
     <div class="col m12 center-align button-smaller-top">
         <h4 class="nothing-font">Congratulations!</h4>
         <p>You won the auction.</p>
-        <%= link_to "Confirm", transfer_photograph_path(@photograph), class: "waves-effect waves-light btn", method: :put %>
+        <% if !@photograph.auction.paid %>
+          <%= link_to "Confirm", transfer_photograph_path(@photograph), class: "waves-effect waves-light btn", method: :put %>
+        <% else %>
+          Thank you for your payment
+        <% end %>
     </div>
   </div>
   <% else %>
