@@ -1,5 +1,5 @@
 class PhotographsController < ApplicationController
-  before_action :set_photograph, only: [:show, :edit, :update, :destroy]
+  before_action :set_photograph, only: [:show, :edit, :update, :destroy, :transfer]
   # skip_before_action :authenticate_user!, only: [:index, :show]
   # skip_before_action :authenticate_influencer!, only: [:index, :show]
 
@@ -72,9 +72,9 @@ class PhotographsController < ApplicationController
   end
 
   def transfer
-    photograph = Photograph.find(params[:id])
-      if photograph.auction.ended?
-        photograph.update_attribute :user_id, photograph.auction.top_bid.user_id
+    # photograph = Photograph.find(params[:id])
+      if @photograph.auction.ended?
+        @photograph.update_attribute :user_id, @photograph.auction.top_bid.user_id
         redirect_to confirmation_charge_path, notice: "Successfully transfered this item."
       else
         redirect_to photograph_path, notice: "Sorry, the auction hasn't ended yet."

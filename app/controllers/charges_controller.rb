@@ -3,7 +3,7 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @photograph = Photograph.find(params[:id])
+    @photograph = Photograph.friendly.find(params[:id])
     @auction = @photograph.auction
     # Amount in cents
     @amount = (@photograph.auction.current_bid * 100).to_i
@@ -27,7 +27,7 @@ class ChargesController < ApplicationController
   end
 
   def confirmation
-    @photograph = Photograph.find(params[:id])
+    @photograph = Photograph.friendly.find(params[:id])
     @auction = @photograph.auction
   end
 end
