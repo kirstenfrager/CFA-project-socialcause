@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'omniauth-facebook'
 gem 'will_paginate', '~> 3.1.0'
 gem 'jquery-datetimepicker-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
@@ -15,7 +16,7 @@ gem 'materialize-form'
 gem 'simple_form'
 gem 'rolify'
 gem 'pundit'
-gem 'instagram'
+# gem 'instagram'
 gem "paperclip", "~> 5.0.0"
 gem 'materialize-sass'
 gem 'devise'

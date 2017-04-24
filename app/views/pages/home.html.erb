@@ -1,6 +1,8 @@
 <%= render "partials/navbar" %>
 
-<p><%= flash[:notice] %></p>
+<div class="contact-flash center-align raleway-bold italic">
+  <p><%= flash[:notice] %></p>
+</div>
 
 <div class="carousel picture-card">
   <% @photographs.each do |photograph| %>

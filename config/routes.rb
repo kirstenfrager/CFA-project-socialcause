@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   post 'connect', to: 'connect#mail'
 
-  devise_for :influencers
   devise_for :users
+  devise_for :influencers, :controllers => { :omniauth_callbacks => "influencers/omniauth_callbacks" } do
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_influencer_session
+  end
 
   resources :photographs do
     resources :auctions, only: [ :create ] do
