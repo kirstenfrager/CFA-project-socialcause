@@ -1,8 +1,19 @@
 <%= render 'partials/navbar' %>
 
+<h2 class="raleway">Mailbox.</h2>
+
+<div class="divider"></div>
+
 <div class="row">
-  <div class="col m6 center-align">
-    <h2 class="raleway">Mailbox.</h2>
+  <div class="col m4 offset-m4">
+    <% if current_user.has_role? :member %>
+        <%= link_to 'Start a new conversation with us', new_conversation_path, :class => "waves-effect waves-light btn button-smaller-top" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col m6 offset-m3 center-align">
     <div class="ui segment">
       <div class="ui list">
         <% @conversations.each do |conversation| %>
@@ -14,9 +25,10 @@
             <% end %>
             <% first_message = conversation.messages.first %>
             <% if first_message %>
-              <%= first_message.body %>
+              <%#= first_message.body %>
             <% end %>
             <div class="button-space divider-div">
+              <%#= conversation.messages.subject %>
               <%= recipient.first_name %> <%= recipient.last_name %> <br>
               <%= link_to 'Inbox |', conversation_messages_path(conversation)%>
               <%= link_to 'Destroy', conversation, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -26,10 +38,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  <%= link_to 'Start a new conversation with us', new_conversation_path %>
 
-
+<div class="row">
   <% if current_user.admin? %>
     <div class="col m6 center-align">
       <h2 class="raleway">All Users.</h2>
