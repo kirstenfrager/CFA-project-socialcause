@@ -7,6 +7,14 @@ class Influencer < ApplicationRecord
 
   has_many :photographs
 
+  # def assign_default_role
+  #   self.add_role(:member) if self.roles.blank?
+  # end
+  #
+  # def admin?
+  #   has_role?(:admin)
+  # end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |influencer|
       influencer.email = auth.info.email

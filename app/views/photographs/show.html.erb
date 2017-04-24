@@ -24,8 +24,10 @@
     <%= render 'partials/bid' %>
 
   <div class="right button-smaller-top">
-    <% if current_user.admin? %>
-      <%= link_to 'End Auction Now |', action_photograph_path(@photograph), method: :post %>
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to 'End Auction Now |', action_photograph_path(@photograph), method: :post %>
+      <% end %>
     <% end %>
     <%= link_to 'Edit |', edit_photograph_path(@photograph) if (current_user && current_user.admin?) || current_influencer %>
     <%= link_to 'Back', photographs_path %>
