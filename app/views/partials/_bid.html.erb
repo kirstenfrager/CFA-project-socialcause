@@ -4,27 +4,30 @@
       <%= render 'auctions/status' %>
     <% else %>
       <%= form_for [ @photograph,  @photograph.auction, Bid.new], html: { multipart: true } do |f| %>
-
           <% if @photograph.auction.top_bid %>
             <% if @photograph.auction.top_bid.user_id == current_user.id %>
               <div class="row raleway">
                 <div class="col m4 offset-m4 center-align button-space-top">
                   <strong>Current Bid: </strong> <br>
                   AUD$ <%= @photograph.auction.current_bid %>
+                </div>
+              </div>
             <% else %>
+              <div class="row raleway">
+                <div class="col m4 offset-m4 center-align button-space-top">
                   <strong>You were outbid, new current bid: </strong> <br>
                   AUD$ <%= @photograph.auction.current_bid %>
                 </div>
               </div>
             <% end %>
           <% else %>
-          <div class="row raleway">
-            <div class="col m4 center-align offset-m4 button-space-top">
-              <strong>Minimum Bid is: </strong> <br>
-              AUD$ <%= @photograph.auction.current_bid %>
-          <% end %>
+            <div class="row raleway">
+              <div class="col m4 center-align offset-m4 button-space-top">
+                <strong>Minimum Bid is: </strong> <br>
+                AUD$ <%= @photograph.auction.current_bid %>
+              </div>
             </div>
-          </div>
+          <% end %>
 
           <div class="row raleway">
             <div class="col m4 center-align offset-m4">
