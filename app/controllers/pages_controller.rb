@@ -20,11 +20,7 @@ class PagesController < ApplicationController
   end
 
   def admin_dashboard
-    @photographs = Photograph.all
-    @influencers = Influencer.all
 
-    @photographs = Photograph.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
-    @p_paginator = @photographs.group_by { |r| r.created_at.to_date }
   end
 
   def list_influencer
@@ -35,5 +31,10 @@ class PagesController < ApplicationController
   def list_user
     @users = User.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
     @u_paginator = @users.group_by { |r| r.created_at.to_date }
+  end
+
+  def list_photo
+    @photographs = Photograph.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    # @p_paginator = @photographs.group_by { |r| r.created_at.to_date }
   end
 end
