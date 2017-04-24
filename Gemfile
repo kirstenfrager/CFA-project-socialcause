@@ -6,7 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 
+
 gem 'omniauth-facebook'
+gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'jquery-datetimepicker-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
