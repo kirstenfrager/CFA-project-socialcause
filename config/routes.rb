@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :bids, only: [ :create ]
     end
     member do
+      post '/action', to: 'photographs#action'
       put :transfer
       resources :charges do
        member do

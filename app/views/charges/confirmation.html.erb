@@ -3,7 +3,9 @@
 
 <div class="row">
   <div class="col m6">
-    <p id="notice"><%= notice %></p>
+    <div class="contact-flash center-align raleway-bold italic">
+      <p id="notice"><%= notice %></p>
+    </div>
     <%= image_tag @photograph.image.url(:large) %> <br>
     <%= link_to 'Back', :back %>
   </div>

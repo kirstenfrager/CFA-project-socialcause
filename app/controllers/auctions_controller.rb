@@ -17,4 +17,11 @@ class AuctionsController < ApplicationController
     params.require(:auction).permit(:value, :ends_at)
   end
 
+  def update_time
+    @end_now = Photograph.friendly.find(params[:photograph_id]).update_attribute(:ends_at, Time.now)
+  end
+
+    # Photograph.friendly.find("blue-haven").update_attribute(:ends_at, Time.now)
+    # Photograph.friendly.find(params[:photograph_id]).update_attribute(:ends_at, Time.now)
+    # Auction.friendly.find(16).update_attribute(:ends_at, Time.now)
 end

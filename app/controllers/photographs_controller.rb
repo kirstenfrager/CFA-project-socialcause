@@ -81,6 +81,11 @@ class PhotographsController < ApplicationController
       end
   end
 
+  def action
+    @photograph = Photograph.friendly.find(params[:id]).auction.update_attributes(:ends_at => Time.now)
+    redirect_to :back
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photograph
