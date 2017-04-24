@@ -3,7 +3,7 @@ class AuctionsController < ApplicationController
   def create
     @photograph = Photograph.friendly.find(params[:photograph_id])
     @auction = Auction.new(auction_params)
-    @auction.photograph_id = params[:photograph_id]
+    @auction.photograph_id = @photograph.id
   #  @auction.ends_at = Time.now + 7.days
 
     if @auction.save
