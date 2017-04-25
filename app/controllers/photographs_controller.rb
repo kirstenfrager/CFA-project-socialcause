@@ -1,7 +1,7 @@
 class PhotographsController < ApplicationController
   before_action :set_photograph, only: [:show, :edit, :update, :destroy, :transfer]
-  # skip_before_action :authenticate_user!
-  # skip_before_action :authenticate_influencer!
+  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_influencer!
 
 # , only: [:index, :show]
   # GET /photographs

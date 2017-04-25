@@ -1,6 +1,8 @@
 require "place_bid"
 
 class BidsController < ApplicationController
+  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_influencer!
 
   def create
     service = PlaceBid.new(bid_params)

@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_influencer!
   before_filter :authorize_admin, :admin_dashboard, :list_influencer
 
+  # influencer log in is rquired if below params are used when accessign dashboard topics
+
   # only: [:home, :charity, :about, :admin_dashboard]
   # only: [:home, :charity, :about, :admin_dashboard]
 
