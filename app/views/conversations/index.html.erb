@@ -16,6 +16,7 @@
   <div class="col m6 offset-m3 center-align">
     <div class="ui segment">
       <div class="ui list">
+        <%#= messages.subject %>
         <% @conversations.each do |conversation| %>
           <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
             <% if conversation.sender_id == current_user.id %>
@@ -24,12 +25,11 @@
               <% recipient = User.find(conversation.sender_id) %>
             <% end %>
             <% first_message = conversation.messages.first %>
-            <% if first_message %>
-              <%#= first_message.body %>
-            <% end %>
             <div class="button-space divider-div">
-              <%#= conversation.messages.subject %>
-              <%= recipient.first_name %> <%= recipient.last_name %> <br>
+            <% if first_message %>
+              <strong>Subject:</strong> <%= first_message.subject %> <br>
+            <% end %>
+              <span class="raleway"><%= recipient.first_name %> <%= recipient.last_name %></span> <br>
               <%= link_to 'Inbox |', conversation_messages_path(conversation)%>
               <%= link_to 'Destroy', conversation, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>

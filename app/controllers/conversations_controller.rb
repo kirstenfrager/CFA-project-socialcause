@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
   def index
     @users = User.all
     @conversations = Conversation.all
-    @messages = Message.all
+    # @messages = @conversation.messages
   end
 
   # GET /Conversation/new

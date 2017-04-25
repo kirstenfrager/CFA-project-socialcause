@@ -44,6 +44,11 @@
       <div class="col m5 offset-m3">
         <%= f.text_area :body, class: "form-control" %>
       </div>
+      <%# if @message.body.blank? %>
+        <!-- <div class="col m5 offset-m3"> -->
+          <%#= f.text_area :body, class: "form-control" %>
+        <!-- </div> -->
+      <%# end %>
       <div class=" col m2">
         <%= f.submit "Send", class: "waves-effect waves-light btn" %>
       </div>
