@@ -1,4 +1,7 @@
 class ChargesController < ApplicationController
+  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_influencer!
+
   def new
   end
 
