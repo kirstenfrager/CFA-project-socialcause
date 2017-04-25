@@ -66,7 +66,7 @@ class PhotographsController < ApplicationController
   def destroy
     @photograph.destroy
     respond_to do |format|
-      format.html { redirect_to photographs_url, notice: 'Photograph was successfully destroyed.' }
+      format.html { redirect_to photographs_url, notice: 'Photograph was successfully destroyed.', class: 'center-align' }
       format.json { head :no_content }
     end
   end

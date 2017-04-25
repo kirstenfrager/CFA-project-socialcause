@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
   end
 
   def create
+    @user = User.all
     @photograph = Photograph.friendly.find(params[:id])
     @auction = @photograph.auction
     # Amount in cents
