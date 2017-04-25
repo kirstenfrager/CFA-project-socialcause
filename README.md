@@ -4,9 +4,6 @@
 **INFLUENCE THIS** is a two sided market place platform entirely built with Ruby on Rails. It is a platform which specialises in charity and influencer collaboration.
 
 ----------
-![Mobile Version](https://lh3.googleusercontent.com/-tBczEQyPyWQ/WP9OYfyJ75I/AAAAAAAAAEg/i_bEdp8Z1X48b7poV9acLaSWeW0MnwcCACLcB/s600/FullSizeRender+%25282%2529.jpg "FullSizeRender &#40;2&#41;.jpg")
-
-----------
 
 ### Concept
 
@@ -84,6 +81,9 @@ User Stories:
 Wireframes:
 
 ![Wireframes](https://lh3.googleusercontent.com/-MeL7blK2nHA/WP70es5z8bI/AAAAAAAAAD4/uY4J5upPWdMv0jH0Jyf6TI34lCrFaSAlwCLcB/s850/IMG_1117.JPG "IMG_1117.JPG")
+
+----------
+![Mobile Version](https://lh3.googleusercontent.com/-tBczEQyPyWQ/WP9OYfyJ75I/AAAAAAAAAEg/i_bEdp8Z1X48b7poV9acLaSWeW0MnwcCACLcB/s900/FullSizeRender+%25282%2529.jpg "FullSizeRender &#40;2&#41;.jpg")
 
 ----------
 **Future Additions**
