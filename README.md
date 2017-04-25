@@ -62,7 +62,7 @@ $ rails s
 
 Within the rails project, folder  *Gemfile* the following gems were installed:
 
-|   ~  | Gems |  ~ |
+|   Gems  | ~|  ~ |
 | :------- | ----: | :---: |
 | rpsec | stripe |  materialize-form   |
 | devise | ransack  |  materialize-sass  |
@@ -107,7 +107,7 @@ Wireframes:
 > Better integration of the charity involvement:
 >- Clearer styling and writing as to which charity the money is going to
 >- Potential option for 'influencer' or 'user' to choose which charity the money goes to
->
+
 > **Consumer Dashboard/Cart**
 
 > Have a dashboard for the users to display:
