@@ -56,7 +56,6 @@
           <%= f.password_field :current_password, autocomplete: "off" %>
         </div>
         <div class="center-align">
-          <a class="waves-effect waves-light btn button-width button-space-top"><%= f.submit "Update" %></a>
           <a class="waves-effect waves-light btn button-space button-smaller-top"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></a>
         </div>
         <div class="center-align button-space">
