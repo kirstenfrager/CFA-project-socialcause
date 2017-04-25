@@ -57,9 +57,5 @@
   <% end %>
 
 <div class="right button-space">
-  <% if current_user.admin? %>
-    <%= link_to 'Back', pages_list_user_path %>
-  <% else %>
-    <%= link_to 'Back', conversations_path %>
-  <% end %>
+  <%= link_to 'Back', conversations_path %>
 </div>

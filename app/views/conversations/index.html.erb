@@ -4,60 +4,64 @@
 
 <div class="divider"></div>
 
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header raleway"><i class="material-icons">email</i>Inbox.</div>
+      <div class="collapsible-body"><span>
+        <div class="ui segment">
+          <div class="ui list center-align">
+            <%#= messages.subject %>
+            <% @conversations.each do |conversation| %>
+              <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+                <% if conversation.sender_id == current_user.id %>
+                  <% recipient = User.find(conversation.recipient_id) %>
+                <% else %>
+                  <% recipient = User.find(conversation.sender_id) %>
+                <% end %>
+                <% first_message = conversation.messages.first %>
+                <div class="button-space divider-div">
+                <% if first_message %>
+                  <strong>SUBJECT:</strong> <%= first_message.subject %> <br>
+                <% end %>
+                  <span class="raleway"><%= recipient.first_name %> <%= recipient.last_name %></span> <br>
+                  <%= link_to 'Inbox |', conversation_messages_path(conversation)%>
+                  <%= link_to 'Destroy', conversation, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </span></div>
+    </li>
+    <% if current_user.admin? %>
+      <li>
+        <div class="collapsible-header raleway"><i class="material-icons">perm_identity</i>All Users.</div>
+        <div class="collapsible-body">
+          <span>
+            <div class="ui segment">
+              <div class="ui list center-align">
+                <% @users.each do |user| %>
+                  <% if user.id != current_user.id %>
+                  <div class="button-space divider-div raleway">
+                    <strong><%= user.first_name %> <%= user.last_name %></strong> <br> <%= link_to "Message me!", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+                  </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </span>
+        </div>
+      </li>
+      <% end %>
+  </ul>
+
+
 <div class="row">
   <div class="col m4 offset-m4">
     <% if current_user.has_role? :member %>
         <%= link_to 'Start a new conversation with us', new_conversation_path, :class => "waves-effect waves-light btn button-smaller-top" %>
     <% end %>
   </div>
-</div>
-
-<div class="row">
-  <div class="col m6 offset-m3 center-align">
-    <div class="ui segment">
-      <div class="ui list">
-        <%#= messages.subject %>
-        <% @conversations.each do |conversation| %>
-          <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
-            <% if conversation.sender_id == current_user.id %>
-              <% recipient = User.find(conversation.recipient_id) %>
-            <% else %>
-              <% recipient = User.find(conversation.sender_id) %>
-            <% end %>
-            <% first_message = conversation.messages.first %>
-            <div class="button-space divider-div">
-            <% if first_message %>
-              <strong>Subject:</strong> <%= first_message.subject %> <br>
-            <% end %>
-              <span class="raleway"><%= recipient.first_name %> <%= recipient.last_name %></span> <br>
-              <%= link_to 'Inbox |', conversation_messages_path(conversation)%>
-              <%= link_to 'Destroy', conversation, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <% if current_user.admin? %>
-    <div class="col m6 center-align">
-      <h2 class="raleway">All Users.</h2>
-      <div class="ui segment">
-        <div class="ui list">
-          <% @users.each do |user| %>
-            <% if user.id != current_user.id %>
-            <div class="button-space divider-div">
-              <%= user.first_name %> <%= user.last_name %> <br> <%= link_to "Message me!", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-            </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
 </div>
 
 <div class="right button-space">
