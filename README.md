@@ -1,8 +1,10 @@
-**INFLUENCE THIS.**
-===================
 
+![enter image description here](https://lh3.googleusercontent.com/-_-UaUoOfs8o/WP9N4jdhGpI/AAAAAAAAAEU/JbICc0BQvGILQpFZjtVJClZdArvUWLTOQCLcB/s500/Screen+Shot+2017-04-25+at+11.17.55+pm.png "Screen Shot 2017-04-25 at 11.17.55 pm.png")
 
 **INFLUENCE THIS** is a two sided market place platform entirely built with Ruby on Rails. It is a platform which specialises in charity and influencer collaboration.
+
+----------
+![Mobile Version](https://lh3.googleusercontent.com/-tBczEQyPyWQ/WP9OYfyJ75I/AAAAAAAAAEg/i_bEdp8Z1X48b7poV9acLaSWeW0MnwcCACLcB/s600/FullSizeRender+%25282%2529.jpg "FullSizeRender &#40;2&#41;.jpg")
 
 ----------
 
@@ -92,7 +94,7 @@ Wireframes:
 > Target a wider range of social media influencers:
 >- Youtube
 >- Beauty bloggers
->- Bloggers/Vloggers etc
+>- Vloggers etc
 > Allow these influencers to auction off services, not just items:
 > - Beauty master classes
 >- Photography sessions
@@ -113,9 +115,8 @@ Wireframes:
 >- Delivery details
 
 ----------
-**Current Bugs & Needed Fixes**
+**Current Bugs**
 -------------
 
 >- authenticate_before actions need to be revised; errors due to two devise models
->- implement delete user and influencer function for admin
->- 100% responsiveness
+>
