@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :charity, :about]
-  skip_before_action :authenticate_influencer!, only: [:home, :charity, :about]
+  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_influencer!
   before_filter :authorize_admin, :admin_dashboard, :list_influencer
+
+  # only: [:home, :charity, :about, :admin_dashboard]
+  # only: [:home, :charity, :about, :admin_dashboard]
 
   # def callback
   #   # binding.pry

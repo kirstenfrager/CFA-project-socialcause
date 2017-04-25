@@ -1,5 +1,7 @@
 class ConversationsController < ApplicationController
   before_action :set_conversation, only: [:destroy]
+  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_influencer!
 
   def index
     @users = User.all

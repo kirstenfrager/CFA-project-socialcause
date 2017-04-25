@@ -26,7 +26,16 @@
 }
 
 .grey-fill {
-  background-color: #E0E0E0;
+  // background-color: #E0E0E0;
+  background-color: rgba(224, 224, 224, 0.2)
+}
+
+.footer-div {
+  border-top: 1px solid #E0E0E0;
+}
+
+.sponsor {
+  height: 120px;
 }
 
 // about page:
