@@ -18,21 +18,22 @@
       <%= current_user.mobile %>
     </p>
     <h5 class="raleway-bold">Delivery Address.</h5>
-    <p class="center-align divider-div-bottom">
+    <p class="center-align button-space">
       <%= current_user.address %>
     </p>
-    <p class="raleway button-space">
-      If the above details are incorrect <br> please update your details within 24hrs.
+  </div>
+  <div class="col m6 center-align">
+    <p class="raleway total-charity">
+      Your invoice has been sent to <br>
+      <strong><%= current_user.email %></strong> <br>
+      for your records.
+    </p>
+    <br>
+    <p class="raleway">
+      If your information is incorrect <br> please update your details within 24hrs.
     </p>
     <br>
     <%= link_to('Edit Details', edit_influencer_registration_path) %>
-  </div>
-  <div class="col m6 center-align">
-    <p class="raleway contact-content">
-      Your invoice has been sent to <br>
-      <strong><%= current_user.email %> <strong> <br>
-      for your records.
-    </p>
   </div>
 </div>
 
