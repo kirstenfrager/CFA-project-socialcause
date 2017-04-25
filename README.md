@@ -62,7 +62,7 @@ $ rails s
 
 Within the rails project, folder  *Gemfile* the following gems were installed:
 
-|   Gems  | ~|  ~ |
+| ~    | Gems | 	 |
 | :------- | ----: | :---: |
 | rpsec | stripe |  materialize-form   |
 | devise | ransack  |  materialize-sass  |
@@ -92,22 +92,18 @@ Wireframes:
 > Target a wider range of social media influencers:
 >- Youtube
 >- Beauty bloggers
->- Vloggers etc
+>- Bloggers/Vloggers etc
 > Allow these influencers to auction off services, not just items:
 > - Beauty master classes
 >- Photography sessions
 >- "A day with" etc
-
-> **Internal Messaging**
-
-> Fix bug issues of displaying subject field even though a subject has already been set
 
 > **Charity Integration**
 
 > Better integration of the charity involvement:
 >- Clearer styling and writing as to which charity the money is going to
 >- Potential option for 'influencer' or 'user' to choose which charity the money goes to
-
+>
 > **Consumer Dashboard/Cart**
 
 > Have a dashboard for the users to display:
@@ -115,3 +111,11 @@ Wireframes:
 >- Items they have won
 >- Payments to be completed on items
 >- Delivery details
+
+----------
+**Current Bugs & Needed Fixes**
+-------------
+
+>- authenticate_before actions need to be revised; errors due to two devise models
+>- implement delete user and influencer function for admin
+>- 100% responsiveness
