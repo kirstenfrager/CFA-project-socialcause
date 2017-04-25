@@ -62,7 +62,7 @@ $ rails s
 
 Within the rails project, folder  *Gemfile* the following gems were installed:
 
-|     | Gems |  |	 |
+|   ~  | Gems |  ~ |
 | :------- | ----: | :---: |
 | rpsec | stripe |  materialize-form   |
 | devise | ransack  |  materialize-sass  |
