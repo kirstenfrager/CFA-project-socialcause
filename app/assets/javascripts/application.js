@@ -30,7 +30,11 @@ $('.datetimepicker').datetimepicker();
 $(document).ready(function(){
    $('.materialboxed').materialbox();
  });
-       
+
+ $(document).ready(function(){
+   $('.collapsible').collapsible();
+ });
+
 // toast
 var $toastContent = $('<span>Email Sent!</span>');
 Materialize.toast($toastContent, 4000, 'rounded');

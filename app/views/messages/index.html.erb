@@ -44,6 +44,11 @@
       <div class="col m5 offset-m3">
         <%= f.text_area :body, class: "form-control" %>
       </div>
+      <%# if @message.body.blank? %>
+        <!-- <div class="col m5 offset-m3"> -->
+          <%#= f.text_area :body, class: "form-control" %>
+        <!-- </div> -->
+      <%# end %>
       <div class=" col m2">
         <%= f.submit "Send", class: "waves-effect waves-light btn" %>
       </div>
@@ -52,9 +57,5 @@
   <% end %>
 
 <div class="right button-space">
-  <% if current_user.admin? %>
-    <%= link_to 'Back', pages_list_user_path %>
-  <% else %>
-    <%= link_to 'Back', conversations_path %>
-  <% end %>
+  <%= link_to 'Back', conversations_path %>
 </div>
