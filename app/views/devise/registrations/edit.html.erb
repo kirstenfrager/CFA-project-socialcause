@@ -55,7 +55,8 @@
     </div>
     <div class="center-align button-space">
       <%#= render "influencers/shared/links" %>
-      <%= link_to "Back", :back %>
+      <%= link_to "Back", :back %> <br>
+      <%= link_to "Home", root_path %>
     </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
