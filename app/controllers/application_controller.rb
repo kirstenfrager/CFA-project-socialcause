@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  # before_action :authenticate_user!
-  # before_action :authenticate_influencer!
+  before_action :authenticate_user!
+  before_action :authenticate_influencer!
 
   def pundit_user
     current_user || current_influencer
