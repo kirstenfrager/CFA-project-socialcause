@@ -60,5 +60,8 @@ Rails.application.configure do
     domain:               ENV["MAILGUN_DOMAIN_URL"],
     user_name:            ENV["MAILGUN_DEFAULT_SMTP"],
     password:             ENV["MAILGUN_PASSWORD"],
+    :domain               'https://influencethis.herokuapp.com/',
     authentication:       "plain" }
+    
+  ActionMailer::Base.delivery_method = :smtp
 end
