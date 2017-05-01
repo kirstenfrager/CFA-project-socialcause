@@ -58,9 +58,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              "smtp.mailgun.org",
     port:                 587,
-    domain:               ENV["MAILGUN_DOMAIN_URL"],
-    user_name:            ENV["MAILGUN_DEFAULT_SMTP"],
-    password:             ENV["MAILGUN_PASSWORD"],
+    domain:               ENV["MAILGUN_DOMAIN"],
+    user_name:            ENV["MAILGUN_SMTP_LOGIN"],
+    password:             ENV["MAILGUN_SMTP_PASSWORD"],
     domain:               'https://influencethis.herokuapp.com/',
     authentication:       "plain" }
 
