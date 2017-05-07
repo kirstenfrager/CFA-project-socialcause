@@ -1,9 +1,10 @@
 
-![enter image description here](https://lh3.googleusercontent.com/-_-UaUoOfs8o/WP9N4jdhGpI/AAAAAAAAAEU/JbICc0BQvGILQpFZjtVJClZdArvUWLTOQCLcB/s500/Screen+Shot+2017-04-25+at+11.17.55+pm.png "Screen Shot 2017-04-25 at 11.17.55 pm.png")
-
+**Getting Started**
+-------------
 **INFLUENCE THIS** is a two sided market place platform entirely built with Ruby on Rails. It is a platform which specialises in charity and influencer collaboration.
 
 ----------
+[TOC]
 
 ### Concept
 
@@ -83,7 +84,17 @@ Wireframes:
 ![Wireframes](https://lh3.googleusercontent.com/-MeL7blK2nHA/WP70es5z8bI/AAAAAAAAAD4/uY4J5upPWdMv0jH0Jyf6TI34lCrFaSAlwCLcB/s850/IMG_1117.JPG "IMG_1117.JPG")
 
 ----------
-![Mobile Version](https://lh3.googleusercontent.com/-tBczEQyPyWQ/WP9OYfyJ75I/AAAAAAAAAEg/i_bEdp8Z1X48b7poV9acLaSWeW0MnwcCACLcB/s900/FullSizeRender+%25282%2529.jpg "FullSizeRender &#40;2&#41;.jpg")
+**Platform Screenshots**
+-------------
+![Mobile Version-Home Page](https://lh3.googleusercontent.com/-tBczEQyPyWQ/WP9OYfyJ75I/AAAAAAAAAEg/i_bEdp8Z1X48b7poV9acLaSWeW0MnwcCACLcB/s900/FullSizeRender+%25282%2529.jpg "FullSizeRender &#40;2&#41;.jpg")
+
+![Auction Listing](https://lh3.googleusercontent.com/-VXH7DWwOmYc/WQ6bhGMMBVI/AAAAAAAAAJI/-fUGZ-2tP3EHREBoIBmgpVDqJCf6KT0MACLcB/s800/Screen+Shot+2017-05-07+at+1.57.12+pm.png "Screen Shot 2017-05-07 at 1.57.12 pm.png")
+
+![About Us](https://lh3.googleusercontent.com/-YJxDu7N67Xo/WQ6bnykyBLI/AAAAAAAAAJQ/DZABrScLSIMve8bUkCwYnRfGe5lUISKFACLcB/s800/Screen+Shot+2017-05-07+at+1.57.34+pm.png "Screen Shot 2017-05-07 at 1.57.34 pm.png")
+
+![Contact Page](https://lh3.googleusercontent.com/-pN-F9Admkk8/WQ6buNd_0VI/AAAAAAAAAJY/9gBF6JyAsH010ZONRdM1FE_EtSSQtGNkgCLcB/s800/Screen+Shot+2017-05-07+at+1.57.53+pm.png "Screen Shot 2017-05-07 at 1.57.53 pm.png")
+
+![Admin Messenger](https://lh3.googleusercontent.com/-E1HZlx1Zgyg/WQ6ca3ALDVI/AAAAAAAAAJ0/kyVKL4a22KQ1jEZCJZApCW0Da6eLGTxSQCLcB/s800/Screen+Shot+2017-05-07+at+2.02.28+pm.png "Screen Shot 2017-05-07 at 2.02.28 pm.png")
 
 ----------
 **Future Additions**
