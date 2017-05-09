@@ -139,4 +139,9 @@ Admin Messenger:
 -------------
 
 >- authenticate_before actions need to be revised; errors due to two devise models
+>- mailgun on heroku not working (resolved)
+
+----------
+**Resolved Previous Issues**
+-------------
 >- MailGun not working on heroku
